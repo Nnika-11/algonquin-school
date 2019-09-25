@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <title>Lab2</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,7 +26,7 @@
 
 <body>
 
-  <form>
+  <form id = "Form" method="get" action="DepositCalculator.php" >
     <div class="bg-light">
       <div class="myForm">
         <h2 class="display-3 px-auto  ">Deposit Calculator</h2>
@@ -34,35 +35,23 @@
     </div>
 
     <div class="form-group myForm my-4">
-
-
-
       <div class="form-group row">
         <label for="inputAmount" class="col-sm-2 col-form-label">Principal Amount:</label>
         <div class="col-sm-10">
-          <input class="form-control" id="inputAmount">
+          <input class="form-control" name="inputAmount" id="inputAmount">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputRate" class="col-sm-2 col-form-label">Interest Rate (%):</label>
         <div class="col-sm-10">
-          <input class="form-control" id="inputRate">
+          <input class="form-control" name="inputRate" id="inputRate">
         </div>
       </div>
       <div class="form-group row">
         <label for="depYears" class="col-sm-2 col-form-label">Years to Deposit:</label>
         <div class="col-sm-10">
-          <select id="depYears" class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+          <select name="depYears" id="depYears" class="form-control">
+            <option value="0">Please select one ...</option>
           </select>
         </div>
       </div>
@@ -70,71 +59,81 @@
       <div class="form-group row">
         <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
         <div class="col-sm-10">
-          <input class="form-control" id="inputName">
+          <input class="form-control" name="inputName" id="inputName">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputPost" class="col-sm-2 col-form-label">Postal Code:</label>
         <div class="col-sm-10">
-          <input class="form-control" id="inputPost">
+          <input class="form-control" name="inputPost" id="inputPost">
         </div>
       </div>
       <div class="form-group row">
         <div class="d-flex flex-column col-sm-2 my-0 py-0">
-          <label for=" inputTel" class=" col-form-label py-0 my-0">Phone Number: </label>
+          <label for="inputTel" class="col-form-label py-0 my-0">Phone Number: </label>
           <small class="form-text text-muted d-inline-flex pt-0 mt-0">(nnn-nnn-nnnn)</small>
         </div>
         <div class="col-sm-10">
-          <input type="tel" class="form-control" id="inputTel">
+          <input type="tel" class="form-control" name="inputTel" id="inputTel">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail" class="col-sm-2 col-form-label">Email Address:</label>
         <div class="col-sm-10">
-          <input class="form-control" id="inputEmail">
+          <input class="form-control" name="inputEmail" id="inputEmail">
         </div>
       </div>
       <hr class="my-3">
 
 
       <div class="form-group row">
-        <label for="inputMethod" class="col-sm-3 col-form-label">Ptefered Contact Method:</label>
+        <label for="inputMethod" class="col-sm-3 col-form-label">Preferred Contact Method:</label>
         <div class="col-sm-9 my-2">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Phone">
-            <label class="form-check-label" for="inlineRadio1">Phone</label>
+            <input class="form-check-input" type="radio" name="Contact"  value="Phone" checked>
+            <label class="form-check-label" for="inlineRadio1" >Phone</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Email">
+            <input class="form-check-input" type="radio" name="Contact"  value="Email">
             <label class="form-check-label" for="inlineRadio2">Email</label>
           </div>
         </div>
       </div>
 
-
-
-
       <label for="contactTome" class="mb-0 form-check-label">If phone is selected, when can we contact you?</label>
       <small class="d-block">(check if applicable)</small>
 
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Morning">
+        <input class="form-check-input" type="checkbox" name="morningCall" id="morningCall" value="Morning">
         <label class="form-check-label" for="inlineCheckbox1">Morning</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Afternoon">
+        <input class="form-check-input" type="checkbox" name="dayCall" id="dayCall" value="Afternoon">
         <label class="form-check-label" for="inlineCheckbox2">Afternoon</label>
       </div>
       <div class="form-check form-check-inline mt-2">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Evening">
+        <input class="form-check-input" type="checkbox" name="evenCall" id="evenCall" value="Evening">
         <label class="form-check-label" for="inlineCheckbox3">Evening</label>
       </div>
       <div class="mt-4">
         <button type="submit" class="btn btn-primary mr-3">Calculate</button>
-        <button type="submit" class="btn btn-primary">Clear</button>
+        <button type="button" onclick="clearForm()" class="btn btn-secondary">Clear</button>
       </div>
     </div>
   </form>
+    <script>
+        var sel = document.getElementById('depYears');
+        for(i=1;i<21;i++){
+            var opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            sel.appendChild(opt); 
+            }
+            
+        function clearForm() {
+        document.getElementById("Form").reset();
+        }
+    </script>
 </body>
 
 </html>
