@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="app.css">
+  <style>
+
+.myForm {
+  max-width:65%;
+  margin:auto;
+}
+</style>
+</head>
+
+<body>
+
+  <form>
+    <div class="bg-light">
+      <div class="myForm">
+        <h2 class="display-3 px-auto  ">Deposit Calculator</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="form-group myForm my-4">
+
+
+
+      <div class="form-group row">
+        <label for="inputAmount" class="col-sm-2 col-form-label">Principal Amount:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputAmount">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputRate" class="col-sm-2 col-form-label">Interest Rate (%):</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputRate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="depYears" class="col-sm-2 col-form-label">Years to Deposit:</label>
+        <div class="col-sm-10">
+          <select id="depYears" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </div>
+      <hr class="my-5">
+      <div class="form-group row">
+        <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPost" class="col-sm-2 col-form-label">Postal Code:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputPost">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="d-flex flex-column col-sm-2 my-0 py-0">
+          <label for=" inputTel" class=" col-form-label py-0 my-0">Phone Number: </label>
+          <small class="form-text text-muted d-inline-flex pt-0 mt-0">(nnn-nnn-nnnn)</small>
+        </div>
+        <div class="col-sm-10">
+          <input type="tel" class="form-control" id="inputTel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email Address:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputEmail">
+        </div>
+      </div>
+      <hr class="my-3">
+
+
+      <div class="form-group row">
+        <label for="inputMethod" class="col-sm-3 col-form-label">Ptefered Contact Method:</label>
+        <div class="col-sm-9 my-2">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Phone">
+            <label class="form-check-label" for="inlineRadio1">Phone</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Email">
+            <label class="form-check-label" for="inlineRadio2">Email</label>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <label for="contactTome" class="mb-0 form-check-label">If phone is selected, when can we contact you?</label>
+      <small class="d-block">(check if applicable)</small>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Morning">
+        <label class="form-check-label" for="inlineCheckbox1">Morning</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Afternoon">
+        <label class="form-check-label" for="inlineCheckbox2">Afternoon</label>
+      </div>
+      <div class="form-check form-check-inline mt-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Evening">
+        <label class="form-check-label" for="inlineCheckbox3">Evening</label>
+      </div>
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary mr-3">Calculate</button>
+        <button type="submit" class="btn btn-primary">Clear</button>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
