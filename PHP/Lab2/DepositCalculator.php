@@ -40,15 +40,29 @@
              $errorMsg .= "<li>Phone Number can not be blank.</li>";
         } if (empty($inputEmail)) {
              $errorMsg .= "<li>Email Address can not be blank.</li>";
-        } if($Contact==="Phone" && !(isset($morningCall)||isset($dayCall)||isset($evenCall))){
+        } if($Contact==="Phone" && !(isset($call))){
             $errorMsg .= "<li>When contact method is phone, you have to select one or more contact times.</li>";
         }
+        
        
         if($MSG != $errorMsg){
             echo "$errorMsg </ul>";
         } else{
+            $contacts="";
+            if(sizeof($call)==1){
+                $contacts = $call[0];
+            }
+            elseif(sizeof($call)==2){
+                $contacts = $call[0]." or ".$call[1];
+            }
+            else{
+                $contacts = $call[0]." or ".$call[1]." or ".$call[2];
+            }
+                
+            
+        echo  '<p> Our customer service department will contact you tomorrow '.$contacts .' within 2 days</p>';
 print <<<Datatbl
-            <p> Our customer service department will contact you within 2 days</p>
+            
             <p> The following is the result of the calculation:</p>
             <table class="table mt-2">
           <thead class="thead-dark">
