@@ -13,96 +13,104 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="app.css">
   <style>
 
-.myForm {
-  max-width:65%;
+    .myForm {
   margin:auto;
+}
+#Form{
+  max-width:650px;
+  margin: auto;
 }
 </style>
 </head>
 
 <body>
 
-  <form id = "Form" method="get" action="DepositCalculator.php" >
-    <div class="bg-light">
+  <form id="Form" method="get" action="DepositCalculator.php">
+    <div class="bg-light  mx-2">
       <div class="myForm">
         <h2 class="display-3 px-auto  ">Deposit Calculator</h2>
         <hr>
       </div>
     </div>
 
-    <div class="form-group myForm my-4">
+    <div class="form-group myForm my-4 mx-2">
       <div class="form-group row">
-        <label for="inputAmount" class="col-sm-2 col-form-label">Principal Amount:</label>
-        <div class="col-sm-10">
+        <label for="inputAmount" class="col-sm-3 col-form-label">Principal Amount:</label>
+        <div class="col-sm-9">
           <input class="form-control" name="inputAmount" id="inputAmount">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputRate" class="col-sm-2 col-form-label">Interest Rate (%):</label>
-        <div class="col-sm-10">
+        <label for="inputRate" class="col-sm-3 col-form-label">Interest Rate (%):</label>
+        <div class="col-sm-9">
           <input class="form-control" name="inputRate" id="inputRate">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="depYears" class="col-sm-2 col-form-label">Years to Deposit:</label>
-        <div class="col-sm-10">
+        <label for="depYears" class="col-sm-3 col-form-label">Years to Deposit:</label>
+        <div class="col-sm-9">
           <select name="depYears" id="depYears" class="form-control">
             <option value="0">Please select one ...</option>
           </select>
+          <div class="invalid-feedback"></div>
         </div>
       </div>
-      <hr class="my-5">
+      <hr class="my-3">
       <div class="form-group row">
-        <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
-        <div class="col-sm-10">
+        <label for="inputName" class="col-sm-3 col-form-label">Name:</label>
+        <div class="col-sm-9">
           <input class="form-control" name="inputName" id="inputName">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPost" class="col-sm-2 col-form-label">Postal Code:</label>
-        <div class="col-sm-10">
+        <label for="inputPost" class="col-sm-3 col-form-label">Postal Code:</label>
+        <div class="col-sm-9">
           <input class="form-control" name="inputPost" id="inputPost">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group row">
-        <div class="d-flex flex-column col-sm-2 my-0 py-0">
+        <div class="d-flex flex-column col-sm-3 my-0 py-0">
           <label for="inputTel" class="col-form-label py-0 my-0">Phone Number: </label>
           <small class="form-text text-muted d-inline-flex pt-0 mt-0">(nnn-nnn-nnnn)</small>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <input type="tel" class="form-control" name="inputTel" id="inputTel">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputEmail" class="col-sm-2 col-form-label">Email Address:</label>
-        <div class="col-sm-10">
+        <label for="inputEmail" class="col-sm-3 col-form-label">Email Address:</label>
+        <div class="col-sm-9">
           <input class="form-control" name="inputEmail" id="inputEmail">
+          <div class="invalid-feedback"></div>
         </div>
       </div>
       <hr class="my-3">
 
 
-      <div class="form-group row">
-        <label for="inputMethod" class="col-sm-3 col-form-label">Preferred Contact Method:</label>
-        <div class="col-sm-9 my-2">
+      <div class="form-group row mb-0">
+        <label for="inputMethod" class="mx-3 col-form-label">Preferred Contact Method:</label>
+        <div class="float-left ml-4 my-2">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="Contact"  value="Phone" checked>
-            <label class="form-check-label" for="inlineRadio1" >Phone</label>
+            <input class="form-check-input" type="radio" name="Contact" value="Phone" checked>
+            <label class="form-check-label" for="inlineRadio1">Phone</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="Contact"  value="Email">
+            <input class="form-check-input" type="radio" name="Contact" value="Email">
             <label class="form-check-label" for="inlineRadio2">Email</label>
           </div>
+
         </div>
       </div>
 
       <label for="contactTome" class="mb-0 form-check-label">If phone is selected, when can we contact you?</label>
       <small class="d-block">(check if applicable)</small>
-
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" name="call[]" id="morningCall" value="morning">
         <label class="form-check-label" for="inlineCheckbox1">Morning</label>
@@ -112,28 +120,29 @@
         <label class="form-check-label" for="inlineCheckbox2">Afternoon</label>
       </div>
       <div class="form-check form-check-inline mt-2">
-        <input class="form-check-input" type="checkbox" name="call[]" id="evenCall" value="evening">
+        <input class="form-check-input " type="checkbox" name="call[]" id="evenCall" value="evening">
         <label class="form-check-label" for="inlineCheckbox3">Evening</label>
       </div>
+      <div class="text-danger"></div>
       <div class="mt-4">
         <button type="submit" class="btn btn-primary mr-3">Calculate</button>
         <button type="button" onclick="clearForm()" class="btn btn-secondary">Clear</button>
       </div>
     </div>
   </form>
-    <script>
-        var sel = document.getElementById('depYears');
-        for(i=1;i<21;i++){
-            var opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(i) );
-            opt.value = i; 
-            sel.appendChild(opt); 
-            }
-            
-        function clearForm() {
-        document.getElementById("Form").reset();
-        }
-    </script>
+  <script>
+    var sel = document.getElementById('depYears');
+    for (i = 1; i < 21; i++) {
+      var opt = document.createElement('option');
+      opt.appendChild(document.createTextNode(i));
+      opt.value = i;
+      sel.appendChild(opt);
+    }
+
+    function clearForm() {
+      document.getElementById("Form").reset();
+    }
+  </script>
 </body>
 
 </html>
